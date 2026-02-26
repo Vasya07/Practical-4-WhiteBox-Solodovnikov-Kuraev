@@ -1,14 +1,76 @@
 ﻿<Page x:Class="Практическая_работа_4_Солодовников_Кураев.Page2"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Практическая_работа_4_Солодовников_Кураев"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page2">
+      Title="Страница 2 - Условная функция">
 
-    <Grid>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="1" Grid.ColumnSpan="3" 
+               Source="/Images/formula12_2.png" 
+               Height="100" Margin="5" 
+               ToolTip="Условная функция из задания"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="X:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbx" Grid.Row="2" Grid.Column="1" 
+                 Margin="5" Padding="5" 
+                 ToolTip="Введите значение X (вещественное число)"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Y:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tby" Grid.Row="3" Grid.Column="1" 
+                 Margin="5" Padding="5" 
+                 ToolTip="Введите значение Y (вещественное число)"/>
         
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="f(x):" VerticalAlignment="Center" Margin="5"/>
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="5">
+            <RadioButton x:Name="RadioShX" Content="sh(x)" GroupName="FunctionGroup" Margin="0,0,15,0" 
+                         ToolTip="Гиперболический синус"/>
+            <RadioButton x:Name="RadioX2" Content="x²" GroupName="FunctionGroup" Margin="0,0,15,0" 
+                         ToolTip="x в квадрате"/>
+            <RadioButton x:Name="RadioEx" Content="e^x" GroupName="FunctionGroup" 
+                         ToolTip="Экспонента"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.RowSpan="3" Grid.Column="2" 
+                    Orientation="Vertical" VerticalAlignment="Center" Margin="10">
+            <Button x:Name="CalculateButton" 
+                    Content="Вычислить" 
+                    Width="100" Height="35" Margin="5"
+                    Click="CalculateButton_Click"
+                    ToolTip="Вычислить значение функции"/>
+            <Button x:Name="ClearButton" 
+                    Content="Очистить" 
+                    Width="100" Height="35" Margin="5"
+                    Click="ClearButton_Click"
+                    ToolTip="Очистить все поля"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Результат:" VerticalAlignment="Top" Margin="5"/>
+        <TextBox x:Name="ResultTextBox" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" 
+                 IsReadOnly="True" Background="#FFF0F0F0"
+                 Margin="5" Padding="5" Height="30" 
+                 ToolTip="Результат вычисления (только для чтения)"/>
+
+        <Border Grid.Row="6" Grid.ColumnSpan="3" 
+                Background="#FFF8F9FA" CornerRadius="5" BorderBrush="#FFDDDDDD" BorderThickness="1"
+                Margin="5" Padding="10">
+            <StackPanel>
+                <TextBlock Text="Условия вычисления:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock Text="Если y РАВЕН 0 → результат = 0" Margin="10,2,0,2"/>
+                <TextBlock Text="Если x РАВЕН 0 → результат = (f(x)² + y)³" Margin="10,2,0,2"/>
+                <TextBlock Text="Если x/y БОЛЬШЕ 0 → результат = ln(f(x)) + (f(x)² + y)³" Margin="10,2,0,2"/>
+                <TextBlock Text="Если x/y МЕНЬШЕ 0 → результат = ln|f(x)/y| + (f(x) + y)³" Margin="10,2,0,2"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

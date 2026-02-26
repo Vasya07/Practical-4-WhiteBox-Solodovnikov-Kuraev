@@ -116,7 +116,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\formula12.png" />
+    <Resource Include="Images\formula12_1.png" />
+    <Resource Include="Images\formula12_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
