@@ -60,17 +60,5 @@
                  IsReadOnly="True" Background="#FFF0F0F0"
                  Margin="5" Padding="5" Height="30" 
                  ToolTip="Результат вычисления (только для чтения)"/>
-
-        <Border Grid.Row="6" Grid.ColumnSpan="3" 
-                Background="#FFF8F9FA" CornerRadius="5" BorderBrush="#FFDDDDDD" BorderThickness="1"
-                Margin="5" Padding="10">
-            <StackPanel>
-                <TextBlock Text="Условия вычисления:" FontWeight="Bold" Margin="0,0,0,5"/>
-                <TextBlock Text="Если y РАВЕН 0 → результат = 0" Margin="10,2,0,2"/>
-                <TextBlock Text="Если x РАВЕН 0 → результат = (f(x)² + y)³" Margin="10,2,0,2"/>
-                <TextBlock Text="Если x/y БОЛЬШЕ 0 → результат = ln(f(x)) + (f(x)² + y)³" Margin="10,2,0,2"/>
-                <TextBlock Text="Если x/y МЕНЬШЕ 0 → результат = ln|f(x)/y| + (f(x) + y)³" Margin="10,2,0,2"/>
-            </StackPanel>
-        </Border>
     </Grid>
 </Page>
