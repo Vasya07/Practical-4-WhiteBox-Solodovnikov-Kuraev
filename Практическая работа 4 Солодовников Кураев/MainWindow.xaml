@@ -46,7 +46,7 @@
                     Margin="0,0,10,0"
                     Padding="15">
                 <StackPanel>
-                    <TextBlock Text="НАВИГАЦИЯ" 
+                    <TextBlock Text="Навигация" 
                                Foreground="#FFAAAAAA" 
                                FontSize="14" 
                                FontWeight="Bold"
@@ -58,8 +58,7 @@
                             Margin="0,5"
                             Background="#FF3498DB"
                             BorderThickness="0"
-                            HorizontalContentAlignment="Stretch"
-                            ToolTip="Основная формула варианта 12">
+                            HorizontalContentAlignment="Stretch">
                         <StackPanel Margin="10,5">
                             <TextBlock Text="Страница 1" 
                                        FontSize="15"
@@ -76,8 +75,7 @@
                             Margin="0,5"
                             Background="#FFE67E22"
                             BorderThickness="0"
-                            HorizontalContentAlignment="Stretch"
-                            ToolTip="Условная функция с выбором f(x)">
+                            HorizontalContentAlignment="Stretch">
                         <StackPanel Margin="10,5">
                             <TextBlock Text="Страница 2" 
                                        FontSize="15"
@@ -94,8 +92,7 @@
                             Margin="0,5"
                             Background="#FF27AE60"
                             BorderThickness="0"
-                            HorizontalContentAlignment="Stretch"
-                            ToolTip="Табуляция функции и построение графика">
+                            HorizontalContentAlignment="Stretch">
                         <StackPanel Margin="10,5">
                             <TextBlock Text="Страница 3" 
                                        FontSize="15"

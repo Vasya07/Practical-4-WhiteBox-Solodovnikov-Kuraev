@@ -12,45 +12,54 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Row="1" Grid.ColumnSpan="3" 
-               Source="/Images/formula12_1.png" 
-               Height="100" Margin="5" 
-               ToolTip="Формула из задания"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="X:" VerticalAlignment="Center" Margin="5"/>
-        <TextBox x:Name="tbx" Grid.Row="2" Grid.Column="1" 
-                 Margin="5" Padding="5" 
-                 ToolTip="Введите значение X (вещественное число)"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Y:" VerticalAlignment="Center" Margin="5"/>
-        <TextBox x:Name="tby" Grid.Row="3" Grid.Column="1" 
-                 Margin="5" Padding="5" 
-                 ToolTip="Введите значение Y (вещественное число)"/>
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Z:" VerticalAlignment="Center" Margin="5"/>
-        <TextBox x:Name="tbz" Grid.Row="4" Grid.Column="1" 
-                 Margin="5" Padding="5" 
-                 ToolTip="Введите значение Z (вещественное число)"/>
 
-        <StackPanel Grid.Row="2" Grid.RowSpan="3" Grid.Column="2" 
-                    Orientation="Vertical" VerticalAlignment="Center" Margin="10">
+        <Image Grid.Row="0" Grid.ColumnSpan="3" 
+               Source="/Images/formula12_1.png" 
+               Height="90" Margin="5" 
+               ToolTip="Формула из задания"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="X:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbx" Grid.Row="1" Grid.Column="1" 
+                 Margin="5" Padding="3" Width="80" MaxLength="10"
+                 HorizontalAlignment="Left"
+                 ToolTip="Введите значение X"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Y:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tby" Grid.Row="2" Grid.Column="1" 
+                 Margin="5" Padding="3" Width="80" MaxLength="10"
+                 HorizontalAlignment="Left"
+                 ToolTip="Введите значение Y"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Z:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbz" Grid.Row="3" Grid.Column="1" 
+                 Margin="5" Padding="3" Width="80" MaxLength="10"
+                 HorizontalAlignment="Left"
+                 ToolTip="Введите значение Z"/>
+        
+        <StackPanel Grid.Row="1" Grid.RowSpan="3" Grid.Column="2" 
+                    Orientation="Vertical" VerticalAlignment="Center" Margin="5,0,0,0">
             <Button x:Name="CalculateButton" 
                     Content="Вычислить" 
-                    Width="100" Height="35" Margin="5"
+                    Width="90" Height="32" Margin="3"
                     Click="CalculateButton_Click"
                     ToolTip="Вычислить значение функции"/>
             <Button x:Name="ClearButton" 
                     Content="Очистить" 
-                    Width="100" Height="35" Margin="5"
+                    Width="90" Height="32" Margin="3"
                     Click="ClearButton_Click"
                     ToolTip="Очистить все поля"/>
         </StackPanel>
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Результат:" VerticalAlignment="Top" Margin="5"/>
-        <TextBox x:Name="ResultTextBox" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" 
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Результат:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="ResultTextBox" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
                  IsReadOnly="True" Background="#FFF0F0F0"
-                 Margin="5" Padding="5" Height="30" 
-                 ToolTip="Результат вычисления (только для чтения)"/>
+                 Margin="5" Padding="5" Height="35" 
+                 FontSize="14" FontWeight="Bold"
+                 ToolTip="Результат вычисления"/>
     </Grid>
 </Page>

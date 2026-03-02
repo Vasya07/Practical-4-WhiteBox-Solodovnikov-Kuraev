@@ -6,75 +6,83 @@
       Title="Страница 3 - Табуляция функции"
       Width="auto" Height="auto">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-        <Grid Margin="20" Width="791">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="420"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Image Grid.Row="1" Grid.ColumnSpan="5" 
-                   Source="/Images/formula12_3.png" 
-                   Height="100" Margin="5" 
-                   ToolTip="Функция для табуляции"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="X0 (начало):" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="tbx0" Grid.Row="2" Grid.Column="1" 
-                     Margin="5" Padding="5" 
-                     ToolTip="Начальное значение X"/>
-            <TextBlock Grid.Row="2" Grid.Column="2" Text="Xk (конец):" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="tbxk" Grid.Row="2" Grid.Column="3" 
-                     Margin="5" Padding="5"
-                     ToolTip="Конечное значение X"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="dx (шаг):" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="tbdx" Grid.Row="3" Grid.Column="1" 
-                     Margin="5" Padding="5" 
-                     ToolTip="Шаг табуляции"/>
-            <TextBlock Grid.Row="3" Grid.Column="2" Text="b (параметр):" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="tbb" Grid.Row="3" Grid.Column="3" 
-                     Margin="5" Padding="5"
-                     ToolTip="Параметр b"/>
-            <StackPanel Grid.Row="2" Grid.RowSpan="2" Grid.Column="4" 
-                        Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,0,0">
-                <Button x:Name="CalculateButton" 
-                        Content="Вычислить" 
-                        Width="100" Height="35" Margin="5"
-                        Click="CalculateButton_Click"
-                        ToolTip="Вычислить и построить график"/>
-                <Button x:Name="ClearButton" 
-                        Content="Очистить" 
-                        Width="100" Height="35" Margin="5"
-                        Click="ClearButton_Click"
-                        ToolTip="Очистить все поля"/>
-            </StackPanel>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Результаты:" VerticalAlignment="Top" Margin="5"/>
-            <TextBox x:Name="ResultTextBox" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" 
-                     IsReadOnly="True" Background="#FFF0F0F0"
-                     Margin="5,5,5,0" Padding="3" 
-                     VerticalScrollBarVisibility="Auto"
-                     HorizontalScrollBarVisibility="Auto"
-                     AcceptsReturn="True"
-                     TextWrapping="Wrap"
-                     FontFamily="Consolas"
-                     FontSize="10"
-                Height="70"
-                ToolTip="Результаты табуляции"/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="График:" VerticalAlignment="Top" Margin="5"/>
-                <oxy:PlotView Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" 
-                          Model="{Binding MyModel}"
-                          Margin="5,0,5,5"
-                    Background="White"
-                          Height="410"
-                    ToolTip="График функции"/>
-        </Grid>
-    </ScrollViewer>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.ColumnSpan="5" 
+               Source="/Images/formula12_3.png" 
+               Height="90" Margin="5" 
+               ToolTip="Функция для табуляции"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="X0 (начало):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbx0" Grid.Row="1" Grid.Column="1" 
+                 Margin="5" Padding="3" Width="100" MaxLength="10"
+                 ToolTip="Начальное значение X"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Xk (конец):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbxk" Grid.Row="1" Grid.Column="3" 
+                 Margin="5" Padding="3" Width="100" MaxLength="10"
+                 ToolTip="Конечное значение X"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="dx (шаг):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbdx" Grid.Row="2" Grid.Column="1" 
+                 Margin="5" Padding="3" Width="100" MaxLength="10"
+                 ToolTip="Шаг табуляции"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="b (параметр):" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="tbb" Grid.Row="2" Grid.Column="3" 
+                 Margin="5" Padding="3" Width="100" MaxLength="10"
+                 ToolTip="Параметр b"/>
+
+        <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" 
+                    Orientation="Vertical" VerticalAlignment="Center" Margin="5,0,0,0">
+            <Button x:Name="CalculateButton" 
+                    Content="Вычислить" 
+                    Width="90" Height="32" Margin="3"
+                    Click="CalculateButton_Click"
+                    ToolTip="Вычислить и построить график"/>
+            <Button x:Name="ClearButton" 
+                    Content="Очистить" 
+                    Width="90" Height="32" Margin="3"
+                    Click="ClearButton_Click"
+                    ToolTip="Очистить все поля"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Результаты:" VerticalAlignment="Top" Margin="5"/>
+        <TextBox x:Name="ResultTextBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" 
+                 IsReadOnly="True" Background="#FFF0F0F0"
+                 Margin="5,5,5,0" Padding="5" 
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 FontFamily="Consolas"
+                 FontSize="11"
+                 Height="120"
+                 ToolTip="Результаты табуляции"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="График:" VerticalAlignment="Top" Margin="5"/>
+        <oxy:PlotView Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" 
+                      Model="{Binding MyModel}"
+                      Margin="5,5,5,5"
+                      Background="White"
+                      Height="400"
+                      VerticalAlignment="Stretch"
+                      HorizontalAlignment="Stretch"
+                      ToolTip="График функции"/>
+    </Grid>
 </Page>
