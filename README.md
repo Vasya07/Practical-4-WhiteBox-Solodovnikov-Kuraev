@@ -17,9 +17,8 @@
 ## Вариант задания №12
 
 ### Страница 1: Основная формула
-```
-![Image not found]("/Практическая работа 4 Солодовников Кураев/Images/formula12_1.png"?raw=true "Optional Title")
-```
+
+![Image not found]("./Images/formula12_1.png"?raw=true "Optional Title")
 ### Страница 2: Условная функция
 ```
     ⎧ ln(f(x)) + (f(x)² + y)³, x/y > 0
