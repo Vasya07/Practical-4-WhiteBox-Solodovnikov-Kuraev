@@ -18,20 +18,11 @@
 
 ### Страница 1: Основная формула
 
-![Image not found]("Practice4_Солодовников _Кураев/Images/formula12_1.png"?raw=true "Optional Title")
+![Image not found](Practice4/Images/formula12_1.png?raw=true "Optional Title")
 ### Страница 2: Условная функция
-```
-    ⎧ ln(f(x)) + (f(x)² + y)³, x/y > 0
-    ⎪ ln|f(x)/y| + (f(x) + y)³, x/y < 0
-b = ⎨ (f(x)² + y)³, x = 0
-    ⎩ 0, y = 0
-
-где f(x) = sh(x) | x² | e^x
-```
+![Image not found](Practice4/Images/formula12_2.png?raw=true "Optional Title")
 ### Страница 3: Табуляция функции
-```
-y = 9(x³ + b³)·tg(x)
-```
+![Image not found](Practice4/Images/formula12_3.png?raw=true "Optional Title")
 ## Стек технологий
 
 - **Язык программирования:** C#
