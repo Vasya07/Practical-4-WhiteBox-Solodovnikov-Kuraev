@@ -97,7 +97,7 @@
 git clone https://github.com/Vasya07/Practical-4-WhiteBox-Solodovnikov-Kuraev.git
 ```
 2. Открыть решение в Visual Studio 2026
-3. Установить NuGet пакет: OxyPlot.WPF
+3. Установить NuGet пакет: OxyPlot.WPF и System.Windows.Extensions
 4. Запустить проект
 
 ## Интерфейс
