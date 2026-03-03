@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Практическая_работа_4_Солодовников_Кураев.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Практическая работа 4 - Солодовников Кураев" 
+        Title="Практическая работа 4 - Солодовников и Кураев" 
         Height="900" Width="800"
         WindowStartupLocation="CenterScreen">
 
@@ -59,7 +59,7 @@
                         BorderThickness="0"
                         FontWeight="Bold"
                         Click="EasterEggButton_Click"
-                        ToolTip="Это какая-то красная кнопка, котороая делает что-то странное"/>
+                        ToolTip="Это какая-то странная кнопка, котороая делает что-то странное"/>
             </StackPanel>
         </Border>
     </Grid>
