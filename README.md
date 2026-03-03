@@ -18,7 +18,7 @@
 
 ### Страница 1: Основная формула
 
-![Image not found]("Practice4_Солодовников _Кураев/Images/formula12_1.png"?raw=true "Optional Title")
+![Image not found](Practice4/Images/formula12_1.png?raw=true "Optional Title")
 ### Страница 2: Условная функция
 ```
     ⎧ ln(f(x)) + (f(x)² + y)³, x/y > 0
