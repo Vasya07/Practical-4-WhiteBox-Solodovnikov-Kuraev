@@ -1,12 +1,9 @@
 ﻿<Window x:Class="Практическая_работа_4_Солодовников_Кураев.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Практическая работа 4: Солодовников и Кураев" 
-        Height="1000" 
-        Width="1300"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="SingleBorderWindow"
-        Background="#FFF5F5F5">
+        Title="Практическая работа 4 - Солодовников Кураев" 
+        Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,126 +11,56 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <Border Grid.Row="0" Background="#FF4A90E2" CornerRadius="0,0,10,10" Padding="10">
-            <StackPanel>
-                <TextBlock Text="Практическая работа №4" 
-                           FontSize="24" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center"/>
-                <TextBlock Text="Солодовников и Кураев" 
-                           FontSize="18" 
-                           Foreground="#FFF0F0F0" 
-                           HorizontalAlignment="Center"
-                           Margin="0,5,0,0"/>
-                <TextBlock Text="&quot;Мы не волшебники, мы только учимся... но WPF уже боится нас!&quot;" 
-                           FontSize="14" 
-                           FontStyle="Italic" 
-                           Foreground="#FFE0E0E0" 
-                           HorizontalAlignment="Center"
-                           Margin="0,10,0,0"/>
-            </StackPanel>
+        <Border Grid.Row="0" Background="#2C3E50" Padding="10">
+            <TextBlock Text="Практическая работа №4" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
         </Border>
-        <Grid Grid.Row="1" Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="260"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" 
-                    Background="#FF2C3E50" 
-                    CornerRadius="10" 
-                    Margin="0,0,10,0"
-                    Padding="15">
-                <StackPanel>
-                    <TextBlock Text="Навигация" 
-                               Foreground="#FFAAAAAA" 
-                               FontSize="14" 
-                               FontWeight="Bold"
-                               Margin="0,0,0,15"
-                               HorizontalAlignment="Center"/>
-                    <Button x:Name="ButtonPage1" 
-                            Click="ButtonPage1_Click"
-                            Height="65"
-                            Margin="0,5"
-                            Background="#FF3498DB"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Stretch">
-                        <StackPanel Margin="10,5">
-                            <TextBlock Text="Страница 1" 
-                                       FontSize="15"
-                                       FontWeight="Bold" 
-                                       Foreground="White"/>
-                            <TextBlock Text="Основная формула" 
-                                       FontSize="11" 
-                                       Foreground="#FFD0D0D0"/>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="ButtonPage2" 
-                            Click="ButtonPage2_Click"
-                            Height="65"
-                            Margin="0,5"
-                            Background="#FFE67E22"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Stretch">
-                        <StackPanel Margin="10,5">
-                            <TextBlock Text="Страница 2" 
-                                       FontSize="15"
-                                       FontWeight="Bold" 
-                                       Foreground="White"/>
-                            <TextBlock Text="Условная функция" 
-                                       FontSize="11" 
-                                       Foreground="#FFD0D0D0"/>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="ButtonPage3" 
-                            Click="ButtonPage3_Click"
-                            Height="65"
-                            Margin="0,5"
-                            Background="#FF27AE60"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Stretch">
-                        <StackPanel Margin="10,5">
-                            <TextBlock Text="Страница 3" 
-                                       FontSize="15"
-                                       FontWeight="Bold" 
-                                       Foreground="White"/>
-                            <TextBlock Text="Табуляция функции" 
-                                       FontSize="11" 
-                                       Foreground="#FFD0D0D0"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-            </Border>
-            <Border Grid.Column="1" 
-                    Background="White" 
-                    CornerRadius="10" 
-                    Padding="15"
-                    BorderBrush="#FFDDDDDD"
-                    BorderThickness="1">
-                <Frame x:Name="MainFrame" 
-                       NavigationUIVisibility="Hidden"
-                       Background="White"/>
-            </Border>
-        </Grid>
-        <Border Grid.Row="2" 
-                Background="#FF2C3E50" 
-                CornerRadius="10,10,0,0" 
-                Padding="8">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+        <Frame x:Name="MainFrame" 
+               Grid.Row="1" 
+               NavigationUIVisibility="Hidden"/>
+        <Border Grid.Row="2" Background="#34495E" Padding="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Page1Button" 
+                        Content="Страница 1 - Основная формула" 
+                        Width="200" Height="40" 
+                        Margin="5"
+                        Background="#3498DB"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="ButtonPage1_Click"/>
 
-                <TextBlock Grid.Column="2" 
-                           Text="Версия 4.2.0" 
-                           Foreground="#FFAAAAAA" 
-                           FontSize="11"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Center"/>
-            </Grid>
+                <Button x:Name="Page2Button" 
+                        Content="Страница 2 - Условная функция" 
+                        Width="200" Height="40" 
+                        Margin="5"
+                        Background="#3498DB"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="ButtonPage2_Click"/>
+
+                <Button x:Name="Page3Button" 
+                        Content="Страница 3 - Табуляция" 
+                        Width="200" Height="40" 
+                        Margin="5"
+                        Background="#3498DB"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Click="ButtonPage3_Click"/>
+
+                <Button x:Name="EasterEggButton" 
+                        Content="Какая-то кнопка" 
+                        Width="113" Height="40" 
+                        Margin="5"
+                        Background="#E74C3C"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        Click="EasterEggButton_Click"
+                        ToolTip="Это какая-то красная кнопка, котороая делает что-то странное"/>
+            </StackPanel>
         </Border>
     </Grid>
 </Window>
