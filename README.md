@@ -31,7 +31,7 @@
   - OxyPlot.WPF — для построения графиков
   - System.Windows.Controls — элементы управления
   - System.Windows.Extensions — для реализации дополнительного функционала
-- **Среда разработки:** Visual Studio 2022
+- **Среда разработки:** Visual Studio 2026
 
 ## Структура проекта
 ```
