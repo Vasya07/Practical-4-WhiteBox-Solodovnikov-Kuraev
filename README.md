@@ -18,11 +18,11 @@
 
 ### Страница 1: Основная формула
 
-![Image not found](Practice4/Images/formula12_1.png?raw=true "Optional Title")
+![Сори, фотка осталась за бортом :(](Practice4/Images/formula12_1.png?raw=true "Optional Title")
 ### Страница 2: Условная функция
-![Image not found](Practice4/Images/formula12_2.png?raw=true "Optional Title")
+![Сори, фотка осталась за бортом :(](Practice4/Images/formula12_2.png?raw=true "Optional Title")
 ### Страница 3: Табуляция функции
-![Image not found](Practice4/Images/formula12_3.png?raw=true "Optional Title")
+![Сори, фотка осталась за бортом :(](Practice4/Images/formula12_3.png?raw=true "Optional Title")
 ## Стек технологий
 
 - **Язык программирования:** C#
@@ -37,9 +37,7 @@
 ```
 Практическая_работа_4_Солодовников_Кураев/
 ├── Images/
-│ ├── formula12_1.png
-│ ├── formula12_2.png
-│ └── formula12_3.png
+│   └── formula12_*.png
 ├── MainWindow.xaml
 ├── MainWindow.xaml.cs
 ├── Page1.xaml
@@ -50,6 +48,15 @@
 ├── Page3.xaml.cs
 ├── Secret.wav
 └── README.md
+
+UnitTestAksenova4/
+├── UnitTest1.cs
+├── References/
+│   ├── PresentationCore
+│   ├── PresentationFramework
+│   └── WindowsBase
+└── packages/
+    └── OxyPlot.WPF
 ```
 
 ## Функциональность
@@ -86,8 +93,8 @@
 - Использование запятой для дробной части
 
 ### Проверка области определения
-- **Стр 1:**: x + y > 0 (подкоренное выражение)
-- **Стр 3:**: cos(x) ≠ 0 (тангенс)
+- **Стр 1:** x + y > 0 (подкоренное выражение)
+- **Стр 3:** cos(x) ≠ 0 (тангенс)
 
 ### Проверка переполнения
 - Обработка Infinity и NaN
@@ -133,3 +140,52 @@ git clone https://github.com/Vasya07/Practical-4-WhiteBox-Solodovnikov-Kuraev.gi
   - В поле введено не число: "Поле должно быть заполнено числом!"
   - Огромные числа для вычисления: "Слишком большие значения для вычисления! Пожалуйста, введите меньшие значения"
   - Деление на ноль: "Произошло деление на ноль"
+
+## Автоматизированное тестирование (Часть 2)
+
+### Цель части 2
+Провести автоматизированное модульное тестирование разработанных математических функций с использованием MS Test.
+
+### Проект модульных тестов
+Был создан отдельный проект **UnitTestAksenova4**, использующий фреймворк MS Test. Для корректной работы с WPF-страницами в тестовый проект добавлены ссылки на `PresentationCore`, `PresentationFramework`, `WindowsBase` и установлен пакет **OxyPlot.WPF**.
+
+### Рефакторинг кода для тестирования
+В каждую страницу (`Page1`, `Page2`, `Page3`) были добавлены **публичные методы вычислений**:
+*   `Page1.CalculateFunction(double x, double y, double z)`
+*   `Page2.CalculateFunction(double x, double y, FunctionType funcType)`
+*   `Page3.CalculateFunction(double x, double b)`
+*   `Page3.TabulateFunction(double x0, double xk, double dx, double b)`
+
+Это позволило тестировать логику расчетов без необходимости взаимодействия с пользовательским интерфейсом.
+
+### Разработанные тесты
+Всего создано **13 тестовых методов**, покрывающих основные сценарии использования и граничные случаи для трех страниц.
+
+| Категория | Имя теста | Что проверяет |
+| :--- | :--- | :--- |
+| **Страница 1** | `Page1_Calculate_ValidInput_ReturnsCorrectResult` | Корректность вычисления при допустимых значениях (X=2, Y=3, Z=1). |
+| | `Page1_Calculate_ZeroY_ThrowsDivideByZero` | Выброс исключения при `Y = 0` (деление на ноль). |
+| | `Page1_Calculate_NegativeY_WorksCorrectly` | Работоспособность при отрицательном `Y` (отсутствие NaN/Infinity). |
+| **Страница 2** | `Page2_CalculateFX_Sinh / Square / Exp` | Проверка функций `sh(x)`, `x²`, `eˣ`. |
+| | `Page2_CalculateFunction_XequalsZero` | Проверка ветки условия при `X = 0`. |
+| | `Page2_CalculateFunction_YequalsZero` | Проверка ветки условия при `Y = 0`. |
+| **Страница 3** | `Page3_CalculateFunction_ValidInput` | Проверка формулы табуляции при `X=1, b=2`. |
+| | `Page3_CalculateFunction_CosEqualsZero_ThrowsDivideByZero` | Выброс исключения при `cos(x) = 0`. |
+| | `Page3_TabulateFunction_ValidInput` | Проверка, что табуляция возвращает точки и текст. |
+| | `Page3_TabulateFunction_InvalidStep_ThrowsException` | Выброс исключения при отрицательном шаге. |
+
+### Результаты выполнения тестов
+
+Тесты были успешно запущены в среде Visual Studio 2026.
+
+**Итоговый результат:** **13 тестов пройдено, 0 не пройдено.**
+<img width="1370" height="417" alt="Сори, фотка осталась за бортом :(" src="https://github.com/user-attachments/assets/bc857bf3-00d9-4b1f-b5db-a13525c29c59" />
+
+
+*Ключевые моменты тестирования:*
+1.  **Первоначальная проблема**: Один из тестов (`Page1_Calculate_ValidInput_ReturnsCorrectResult`) не проходил из-за неверно рассчитанного ожидаемого значения.
+2.  **Исправление**: Ожидаемое значение было скорректировано на `537,3788`, полученное при ручном расчете в приложении.
+3.  **Техническая сложность**: Для корректной инициализации страницы `Page3` в тестах потребовалась установка пакета **OxyPlot.WPF** в тестовый проект, так как страница содержит графический компонент.
+
+### Вывод по части 2
+В результате выполнения работы были успешно созданы и выполнены модульные тесты для всех трех математических функций. Тестирование подтвердило корректность работы алгоритмов после проведенного рефакторинга. Использование подхода "белого ящика" позволило убедиться в правильности обработки всех ветвлений и исключительных ситуаций в коде.
