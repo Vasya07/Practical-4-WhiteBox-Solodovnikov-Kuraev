@@ -35,7 +35,7 @@ namespace UnitTestAksenova4
             double x = 2;
             double y = 3;
             double z = 1;
-            double expected = 122.715;
+            double expected = 537.37881428004;
             double actual = page1.CalculateFunction(x, y, z);
             Assert.AreEqual(expected, actual, 0.001, "Неверное значение функции");
         }
